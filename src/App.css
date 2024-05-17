@@ -46,6 +46,7 @@ li.nav-item:not(:last-child){
 
 .dropdown-item{
   padding: 0;
+  display: flex;
 }
 
 

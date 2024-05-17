@@ -1,16 +1,18 @@
 import { useState } from "react";
 
 const NavItemContent= ({childrens = []}) => {
-    return <div className="container">
-    <div className="row">
+    return <> 
+    {/* <div className="container">
+    <div className="row"> */}
         {childrens.map((child, index) => 
-            <div className="col-12 col-md-4 p-4 text-center productItem" key={index}>
+            <div className="col-12 col-lg-4 p-4 text-center productItem" key={index}>
                 <img src={child.icon} width={260} height={100}/>
                 <h4>{child.title}</h4>
                 <p>{child.subtitle}</p>
             </div>)}
-    </div>
-    </div>
+    {/* </div>
+    </div> */}
+    </>
 }
 
 export default function NavItem({navItem = {}}){
@@ -28,13 +30,11 @@ export default function NavItem({navItem = {}}){
                 <span className="mt-0 mx-3 mt-lg-3 mx-lg-0">{navItem.title}</span>
             </div>
         </a>
-        <ul className={`dropdown-menu ${hover? "show" : ""}`} aria-labelledby="navbarDropdownMenuLink">
-            <li>
-                <a className="dropdown-item">
-                    <NavItemContent childrens={navItem.children}/>
-                </a>
-            </li>
-        </ul>
+        <div className={`container dropdown-menu ${hover? "show" : ""}`} aria-labelledby="navbarDropdownMenuLink">
+            <a className="dropdown-item row">
+                <NavItemContent childrens={navItem.children}/>
+            </a>
+        </div>
         </li>
     </>
     return <>
